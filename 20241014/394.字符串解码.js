@@ -9,6 +9,7 @@
  * @param {string} s
  * @return {string}
  */
+// 666
 var decodeString = function(s) {
   let stack = [], res = '', mul = 0;
   for (const c of s) {
