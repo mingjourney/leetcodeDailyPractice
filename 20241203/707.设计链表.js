@@ -26,6 +26,7 @@ MyLinkedList.prototype.get = function(index) {
   while (index-- > 0) {
     cur = cur.next;
   }
+  console.log("摸鱼")
   return cur.val;
 };
 
