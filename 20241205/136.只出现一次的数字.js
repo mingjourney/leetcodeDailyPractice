@@ -10,7 +10,7 @@
  * @return {number}
  */
 var singleNumber = function(nums) {
-    // 112234455667788
+  return nums.reduce((acc, num) => acc ^= num, 0)
 };
 // @lc code=end
 
