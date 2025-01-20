@@ -1,7 +1,7 @@
 /*
- * @lc app=leetcode.cn id=25 lang=javascript
+ * @lc app=leetcode.cn id=206 lang=javascript
  *
- * [25] K 个一组翻转链表
+ * [206] 反转链表
  */
 
 // @lc code=start
@@ -14,11 +14,16 @@
  */
 /**
  * @param {ListNode} head
- * @param {number} k
  * @return {ListNode}
  */
-var reverseKGroup = function(head, k) {
-    
+var reverseList = function(head) {
+  if (!head || !head.next) {
+    return head;
+  }
+  const newHead = reverseList(head.next);
+  head.next.next = head;
+  head.next = null;
+  return newHead;
 };
 // @lc code=end
 
