@@ -17,9 +17,16 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
-var isValidBST = function(root, min = -Infinity, max = Infinity) {
-  if (!root) return true; 
-  return root.val > min && root.val < max && isValidBST(root.left, min, root.val) && isValidBST(root.right, root.val, max);
+var isValidBST = function (root) {
+  pre = -Infinity;
+  const isValid = (root) => {
+    if (!root) return true;
+    if (!isValid(root.left)) return false;
+    if (root.val <= pre) return false;
+    pre = root.val;
+    return isValid(root.right);
+  }
+  return isValid(root);
 };
 // @lc code=end
 
